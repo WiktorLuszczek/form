@@ -4,6 +4,12 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { formSchema } from "../schema/formSchema";
 
+type Data = {
+  email: string;
+  password: string;
+  confirmPassowrd: string;
+};
+
 export const Form = () => {
   const {
     register,
@@ -13,7 +19,7 @@ export const Form = () => {
     resolver: yupResolver(formSchema),
   });
 
-  const submitForm = (data) => {
+  const submitForm = (data: Data) => {
     console.log(data);
   };
   return (
